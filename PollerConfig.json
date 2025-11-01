@@ -1,0 +1,41 @@
+[
+  {
+    "name": "cveBusterPoller_vulnerabilities",
+    "apiVersion": "2022-12-01-preview",
+    "type": "Microsoft.SecurityInsights/dataConnectors",
+    "kind": "RestApiPoller",
+    "properties": {
+      "connectorDefinitionName": "cveBuster",
+      "dcrConfig": {
+        "streamName": "Custom-cveBusterVulnerabilities_API",
+        "dataCollectionEndpoint": "[[parameters('dcrConfig').dataCollectionEndpoint]",
+        "dataCollectionRuleImmutableId": "[[parameters('dcrConfig').dataCollectionRuleImmutableId]"
+      },
+      "dataType": "cveBuster Vulnerability Scanner API",
+      "auth": {
+        "type": "APIKey",
+        "ApiKey": "[[parameters('apiKey')]",
+        "ApiKeyName": "Authorization"
+      },
+      "request": {
+        "apiEndpoint": "[[parameters('apiEndpoint')]",
+        "rateLimitQPS": 10,
+        "queryWindowInMin": 5,
+        "httpMethod": "GET",
+        "retryCount": 3,
+        "timeoutInSeconds": 60,
+        "headers": {
+          "Accept": "application/json",
+          "User-Agent": "cveBuster-Sentinel-Connector"
+        }
+      },
+      "response": {
+        "eventsJsonPaths": [
+          "$.data"
+        ],
+        "format": "json"
+      },
+      "isActive": true
+    }
+  }
+]

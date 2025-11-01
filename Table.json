@@ -1,0 +1,113 @@
+{
+  "name": "cveBusterVulnerabilities_CL",
+  "type": "Microsoft.OperationalInsights/workspaces/tables",
+  "apiVersion": "2022-10-01",
+  "properties": {
+    "schema": {
+      "name": "cveBusterVulnerabilities_CL",
+      "columns": [
+        {
+          "name": "TimeGenerated",
+          "type": "datetime",
+          "isDefaultDisplay": true,
+          "description": "The timestamp (UTC) reflecting the time in which the event was generated."
+        },
+        {
+          "name": "MachineName",
+          "type": "string",
+          "description": "The name of the machine where the vulnerability was detected."
+        },
+        {
+          "name": "HostId",
+          "type": "string",
+          "description": "Unique identifier for the host."
+        },
+        {
+          "name": "IPAddress",
+          "type": "string",
+          "description": "IP address of the vulnerable machine."
+        },
+        {
+          "name": "OSFamily",
+          "type": "string",
+          "description": "Operating system family."
+        },
+        {
+          "name": "Application",
+          "type": "string",
+          "description": "Name of the vulnerable application."
+        },
+        {
+          "name": "AppFilePath",
+          "type": "string",
+          "description": "File path of the vulnerable application."
+        },
+        {
+          "name": "VulnId",
+          "type": "string",
+          "description": "CVE identifier for the vulnerability."
+        },
+        {
+          "name": "VulnTitle",
+          "type": "string",
+          "description": "Title/description of the vulnerability."
+        },
+        {
+          "name": "Severity",
+          "type": "string",
+          "description": "Severity level (Critical, High, Medium, Low)."
+        },
+        {
+          "name": "CVSS",
+          "type": "real",
+          "description": "CVSS score of the vulnerability."
+        },
+        {
+          "name": "ExploitAvailable",
+          "type": "boolean",
+          "description": "Indicates if an exploit is publicly available."
+        },
+        {
+          "name": "ExploitedInWild",
+          "type": "boolean",
+          "description": "Indicates if the vulnerability is being exploited in the wild."
+        },
+        {
+          "name": "PatchAvailable",
+          "type": "boolean",
+          "description": "Indicates if a patch is available."
+        },
+        {
+          "name": "FirstSeen",
+          "type": "datetime",
+          "description": "Timestamp when the vulnerability was first detected."
+        },
+        {
+          "name": "LastSeen",
+          "type": "datetime",
+          "description": "Timestamp when the vulnerability was last detected."
+        },
+        {
+          "name": "LastScanTime",
+          "type": "datetime",
+          "description": "Timestamp of the last vulnerability scan."
+        },
+        {
+          "name": "AssetCriticality",
+          "type": "string",
+          "description": "Criticality rating of the asset."
+        },
+        {
+          "name": "BusinessOwner",
+          "type": "string",
+          "description": "Business owner responsible for the asset."
+        },
+        {
+          "name": "Source",
+          "type": "string",
+          "description": "Source of the vulnerability data."
+        }
+      ]
+    }
+  }
+}
